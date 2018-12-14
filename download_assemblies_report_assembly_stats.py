@@ -12,8 +12,7 @@ from Bio import SeqIO
 
 output_directory = sys.argv[1]
 
-# Program requires the assembly metadata provided by GenBank
-# GenBank metadata address 
+# Program downloads the assembly metadata provided by GenBank 
 os.system('wget ftp://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_genbank.txt')
 metadata = "assembly_summary_genbank.txt"
 
