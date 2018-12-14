@@ -18,6 +18,7 @@ metadata = "assembly_summary_genbank.txt"
 
 # Genera with known protist pathogens 
 parasites = {"Karlodinium":{},
+"Prorocentrum":{},
 "Chattonella":{},
 "Dinophysis":{},
 "Alexandrium":{},
@@ -59,7 +60,7 @@ for h,i in enumerate(open(metadata)):
 		genome = ftp+"/"+ftp.split("/")[-1]+"_genomic.fna.gz"
 		# Download if genera of protist pathogen in taxonomic name of assembly
 		for k,v in parasites.items():
-			if k in taxaName:
+			if k.upper() in taxaName.upper():
 				os.system("wget -nc -O "+output_directory+" "+genome)
 				# Record number of assemblies downloaded for each protist pathogen genera and species
 				if taxaName in parasites[k]:
